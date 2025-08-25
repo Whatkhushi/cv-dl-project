@@ -11,7 +11,7 @@ the texture (patterns)
 
 the colors
 
-and some important key points from the note’s image
+and some important key points from the note’s image.
 
 Using these details, a Random Forest model learns to tell which note it is.
 
