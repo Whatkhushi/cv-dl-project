@@ -1,10 +1,21 @@
 # Indian-Currency-Classification
 
-An application for classifying new indian currency notes using **random forest** classifier. It is implemented with the help of **opencv** and **scikit-learn** library. The dataset used for training consists of **1050** images of new currency notes(INR). It includes denominations of **10, 20, 50, 100, 200, 500 and 2000** rupees notes(i.e. 7 classes with 150 each).
+This project is about classifying Indian currency notes using machine learning.
+We trained a model with 1050 images of notes in 7 types: ₹10, ₹20, ₹50, ₹100, ₹200, ₹500, and ₹2000.
 
-Here we use **hu moments**(shape), **haralick**(texture) and **colour histogram**(colour) as global features and **bag of visual words**(BOVW) with **SIFT** as a local feature descriptor. It is then trained using a random forest classifier using scikit-learn library.
+The program looks at:
 
-Finally during **inference**, we extract the **rectangular ROI's** from the preprocessed image using opencv(cropped rotated contours) and **predicts** the class labels using the trained random forest **model**.
+the shape of the note
+
+the texture (patterns)
+
+the colors
+
+and some important key points from the note’s image
+
+Using these details, a Random Forest model learns to tell which note it is.
+
+When you give a new image, the program first finds the note in the picture and then predicts its value.
 
 
 ## Dependencies
@@ -55,19 +66,3 @@ n_jobs=-1,verbose=1
 
 ![Screenshot](results/result.png)
 
-## Versioning
-
-Version 1.0
-
-## Authors
-
-Anil Sathyan
-
-## Acknowledgments
-* "https://kushalvyas.github.io/BOV.html"
-* "https://gogul.dev/software/image-classification-python"
-* "https://github.com/briansrls/SIFTBOW"
-* "https://www.pyimagesearch.com/2017/01/02/rotate-images-correctly-with-opencv-and-python/"
-* "https://towardsdatascience.com/optimizing-hyperparameters-in-random-forest-classification-ec7741f9d3f6"
-* "https://stackoverflow.com/questions/11627362/how-to-straighten-a-rotated-rectangle-area-of-an-image-using-opencv-in-python/48553593#48553593"
-* "https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_contours/py_contour_features/py_contour_features.html"
