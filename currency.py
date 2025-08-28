@@ -50,7 +50,7 @@ def rotate_bound(image,point,angle):
     # grab the dimensions of the image and then determine the
     # center
     (h, w) = image.shape[:2]
-    (cX, cY) = (w // 2, h // 2)
+    (cX, cY) =   (w // 2, h // 2)
  
     # grab the rotation matrix and find their sine, cosine components
     # (i.e., the rotation components of the matrix)
@@ -67,11 +67,11 @@ def rotate_bound(image,point,angle):
     M[1, 2] += (nH / 2) - cY
     
     # find new position of the point after rotation
-    point=np.array(point).reshape((1,1,-1))
-    newpoint=cv2.transform(point, M).squeeze()
+    point= np.array(point).reshape((1,1,-1))
+    newpoint= cv2.transform(point, M).squeeze()
 
     # perform the actual rotation and return the image along with transformed point
-    return newpoint,cv2.warpAffine(image, M, (nW, nH))
+    return newpoint, cv2.warpAffine(image, M, (nW, nH))
 
 
 def crop_image(rect, src):

@@ -18,13 +18,13 @@ LABEL='model/label_600.npy'
 def fd_hu_moments(image):
     image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     feature = cv2.HuMoments(cv2.moments(image)).flatten()
-    return feature
+    return  feature 
 
 # Haralick Texture
 def fd_haralick(image):
     
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    haralick = mahotas.features.haralick(gray).mean(axis=0)
+    haralick = mahotas.features.haralick(gray).mean(axis=  0)
     return haralick
 
 # Color Histogram
